@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Departments — 5×2 Grid, 16:9, Hover Blur (Bigger)</title>
+<style>
+    :root{ --gap:20px; --radius:16px; --tile-min:360px; --border:3px; --accent:#0ea5e9; --accent-2:#22c55e; --text:#e5e7eb; --muted:#cbd5e1 }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background: linear-gradient(135deg, rgba(0,44,115,0.06) 0%, rgba(0,44,115,0.12) 35%, rgba(0,44,115,0.18) 100%), #ffffff; color:var(--text)}
+    .wrapper{max-width:1800px; margin:24px auto; padding:0 16px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(var(--tile-min),1fr)); gap:var(--gap)}
+    @media (min-width:1100px){ .grid{grid-template-columns:repeat(5,1fr)} }
+
+    .tile{position:relative; isolation:isolate; border-radius:16px; aspect-ratio:16/9; overflow:hidden; background:#0c1226}
+    .tile::before{content:""; position:absolute; inset:0; padding:3px; border-radius:inherit; background:conic-gradient(from 0deg, #0ea5e9, #22c55e, #0ea5e9); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:.9; animation:spin 8s linear infinite}
+    @keyframes spin{to{transform:rotate(1turn)}}
+
+    .tile__inner{position:relative; z-index:1; height:100%; border-radius:inherit}
+    .tile__media{position:absolute; inset:0; overflow:hidden; background:#0e152b}
+    .tile__image{position:absolute; inset:0; background-position:center; background-size:cover; filter:none; transition:filter .35s ease, transform .45s ease}
+    .tile:hover .tile__image{filter:blur(3.5px) saturate(.95) contrast(1.05); transform:scale(1.03)}
+
+    .hover-panel{position:absolute; left:0; right:0; bottom:0; padding:18px 16px; color:var(--text); background:linear-gradient(180deg, rgba(10,14,26,0) 0%, rgba(10,14,26,.6) 45%, rgba(10,14,26,.9) 100%); transform:translateY(100%); opacity:0; transition:transform .35s ease, opacity .35s ease}
+    .tile:hover .hover-panel{transform:translateY(0); opacity:1}
+
+    .desc{font-size:clamp(1rem, .95rem + .35vw, 1.15rem); line-height:1.45; color:var(--muted)}
+
+    a.tile-link{position:absolute; inset:0; z-index:2; border-radius:inherit}
+
+    @media (prefers-reduced-motion:reduce){ .tile::before{animation:none} .tile__image, .hover-panel{transition:none} }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+<section aria-label="Departments (5 columns x 2 rows)" class="grid">
+<!-- Top row: IT, Admin, Art, Planning, E-Com -->
+<article aria-label="IT Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="IT Department image" class="tile__image" role="img" style="background-image:url('it.jpg.png');"></div><div class="hover-panel"><div class="desc">Infrastructure, helpdesk, and systems maintenance.</div></div></div><a aria-label="Open IT Department" class="tile-link" href="#it"></a></div></article>
+<article aria-label="Admin Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Admin Department image" class="tile__image" role="img" style="background-image:url('admindepartment.jpg.png');"></div><div class="hover-panel"><div class="desc">Office management and support services.</div></div></div><a aria-label="Open Admin Department" class="tile-link" href="#admin"></a></div></article>
+<article aria-label="Art Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Art Department image" class="tile__image" role="img" style="background-image:url('3.png');"></div><div class="hover-panel"><div class="desc">Visual design, branding assets, and creative production.</div></div></div><a aria-label="Open Art Department" class="tile-link" href="#art"></a></div></article>
+<article aria-label="Planning Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Planning Department image" class="tile__image" role="img" style="background-image:url('4.png');"></div><div class="hover-panel"><div class="desc">Scheduling, capacity planning, and project coordination.</div></div></div><a aria-label="Open Planning Department" class="tile-link" href="#planning"></a></div></article>
+<article aria-label="E-Com Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="E-Com Department image" class="tile__image" role="img" style="background-image:url('5.png');"></div><div class="hover-panel"><div class="desc">Online sales, storefront, merchandising &amp; analytics.</div></div></div><a aria-label="Open E-Com Department" class="tile-link" href="#ecom"></a></div></article>
+<!-- Bottom row: Shipping, Training, Service, Warehouse, Quality Control -->
+<article aria-label="Shipping Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Shipping Department image" class="tile__image" role="img" style="background-image:url('10.png');"></div><div class="hover-panel"><div class="desc">Order packing, labeling &amp; dispatch coordination.</div></div></div><a aria-label="Open Shipping Department" class="tile-link" href="#shipping"></a></div></article>
+<article aria-label="Training" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Training session image" class="tile__image" role="img" style="background-image:url('9.png');"></div><div class="hover-panel"><div class="desc">Employee onboarding, product knowledge, and skills development.</div></div></div><a aria-label="Open Training" class="tile-link" href="#training"></a></div></article>
+<article aria-label="Service Department" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Service Department image" class="tile__image" role="img" style="background-image:url('8.png');"></div><div class="hover-panel"><div class="desc">Repairs, installations, and customer support.</div></div></div><a aria-label="Open Service Department" class="tile-link" href="#service"></a></div></article>
+<article aria-label="Warehouse" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Warehouse department image" class="tile__image" role="img" style="background-image:url('7.png');"></div><div class="hover-panel"><div class="desc">Inventory, receiving, picking &amp; dispatch.</div></div></div><a aria-label="Open Warehouse" class="tile-link" href="#warehouse"></a></div></article>
+<article aria-label="Quality Control" class="tile"><div class="tile__inner"><div class="tile__media"><div aria-label="Quality Control department image" class="tile__image" role="img" style="background-image:url('6.png');"></div><div class="hover-panel"><div class="desc">Standards, inspections, and product verification.</div></div></div><a aria-label="Open Quality Control" class="tile-link" href="#quality-control"></a></div></article>
+</section>
+<!-- Anchors -->
+<div hidden="" id="it"></div><div hidden="" id="admin"></div><div hidden="" id="art"></div><div hidden="" id="planning"></div><div hidden="" id="ecom"></div><div hidden="" id="shipping"></div><div hidden="" id="training"></div><div hidden="" id="service"></div><div hidden="" id="warehouse"></div><div hidden="" id="quality-control"></div>
+</div>
+</body>
+</html>
