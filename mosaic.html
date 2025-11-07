@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Department Tiles</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: white; color: black; }
+    .tile-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+    .tile { position: relative; overflow: hidden; border-radius: 10px; height: 200px; cursor: pointer; padding: 4px; background: linear-gradient(270deg, #002C73, transparent, #002C73); background-size: 400% 400%; animation: borderFlow 6s linear infinite; }
+    @keyframes borderFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .tile-content { position: relative; height: 100%; width: 100%; border-radius: 8px; overflow: hidden; background-color: #fff; }
+    .tile-content img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease; }
+    .image-hover { opacity: 0; }
+    .tile:hover .default-image { opacity: 0; }
+    .tile:hover .image-hover { opacity: 1; }
+    .overlay { display: none !important; }
+    .tile-label { position: absolute; bottom: 8px; left: 8px; color: black; font-size: 16px; font-weight: bold; z-index: 3; pointer-events: none; }
+    a.tile-link { text-decoration: none; color: inherit; display: block; }
+  </style>
+</head>
+<body>
+  <div class="tile-container">
+    <a href="https://stingrayacc.sharepoint.com/sites/StingrayIntranet/SitePages/IT-Department-Training-Hub.aspx" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/it.png" class="default-image" alt="IT Department">
+          <img src="https://luqzzzy.github.io/tiles/it-hover.png" class="image-hover" alt="IT Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/admin.png" class="default-image" alt="Admin Department">
+          <img src="https://luqzzzy.github.io/tiles/admin-hover.png" class="image-hover" alt="Admin Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/art.png" class="default-image" alt="Art Department">
+          <img src="https://luqzzzy.github.io/tiles/art-hover.png" class="image-hover" alt="Art Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/planning.png" class="default-image" alt="Planning Department">
+          <img src="https://luqzzzy.github.io/tiles/planning-hover.png" class="image-hover" alt="Planning Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/e-com.png" class="default-image" alt="Ecom Department">
+          <img src="https://luqzzzy.github.io/tiles/e-com-hover.png" class="image-hover" alt="Ecom Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/quality.png" class="default-image" alt="Quality Control">
+          <img src="https://luqzzzy.github.io/tiles/quality-hover.png" class="image-hover" alt="Quality Control Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/warehouse.png" class="default-image" alt="Warehouse">
+          <img src="https://luqzzzy.github.io/tiles/warehouse-hover.png" class="image-hover" alt="Warehouse Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/service.png" class="default-image" alt="Service Department">
+          <img src="https://luqzzzy.github.io/tiles/service-hover.png" class="image-hover" alt="Service Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/training.png" class="default-image" alt="Training">
+          <img src="https://luqzzzy.github.io/tiles/training-hover.png" class="image-hover" alt="Training Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="tile-link">
+      <div class="tile">
+        <div class="tile-content">
+          <img src="https://luqzzzy.github.io/tiles/service.png" class="default-image" alt="Shipping Department">
+          <img src="https://luqzzzy.github.io/tiles/shipping-hover.png" class="image-hover" alt="Shipping Department Hover">
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>
+</html>
